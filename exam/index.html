@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>YANDEX</title>
+</head>
+<body>
+    <header class="header">
+        <a href="https://ru.wikipedia.org/wiki/%D0%A4%D0%B0%D0%B9%D0%BB:Yandex_icon.svg" class="logo">YANDEX</a>
+
+        <nav class="header">
+            <ul class="menu">
+                <li><a href="">О компании</a></li>
+                <li><a href="">Услуги</a></li>
+                <li><a href="">Контакты</a></li>
+            </ul>
+        </nav>
+
+        <button class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <div class="promo">
+        <div class="item1">
+            <h3>Рекламные баннеры для вас!</h3>
+                <img src="../exam/pic/shablon.jpg" alt="">
+            <p>Мы специально для вас подберем идеальное место под рекламный баннер!</p>
+            <p>Мы прорекламируем ваш ресурс быстро и качественно!
+            </p>
+        </div>
+        <!-- <div class="item2">
+            <h3>Лучшие визитки для вас!</h3>
+                <img src="../exam/pic/j4qvjbx6as7de9va2xln5jzp2q0xqaqm.webp" alt="">
+            <p>Создадим карманную рекламу для вас!</p>
+        </div> -->
+    </div>
+
+
+
+    <section class="products" id="products">
+        <div class="card">
+            <h3>Первое место в поисковой строке</h3>
+                <p>Вы займете самые первые места по вашим запросам</p>
+            <img src="../exam/pic/dinamicheskie-mesta-v-poiske-3.png" alt="">
+            <button class="open-modal">Связаться</button>
+        </div>
+        <div class="card">
+            <h3>Колонка Яндекс Алиса</h3>
+                <p>Лучший звук на свете!</p>
+            <img src="../exam/pic/kolonka.jpeg" alt="">
+            <button class="open-modal">Связаться</button>
+        </div>
+        <div class="card">
+            <h3>Услуга по нативной рекламе</h3>
+                <p>Доставим вас в любое место в городе!</p>
+            <img src="../exam/pic/images.jpeg" alt="">
+            <button class="open-modal">Связаться</button>
+        </div>
+    </section>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Обратная связь</h2>
+            <input type="text" placeholder="Ваше имя">
+            <input type="tel" placeholder="Ваш номер">
+            <button id="close-modal">Отправить</button>
+        </div>
+    </div>
+</body>
+</html>
