@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+}
+
+/* Добавьте эти анимации */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.info {
+    animation: slideIn 0.5s ease-out;
+}
+
+.photo-popup.active {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Предотвращаем дрожание на мобильных */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Хедер для мобильных */
+.header {
+    display: flex;
+    justify-content: center;
+    background-color: #111;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.header .logo {
+    color: white;
+    text-decoration: none;
+    font-size: 20px; /* Уменьшаем на мобильных */
+    cursor: pointer;
+    display: inline-block;
+    padding: 15px;
+    text-align: center;
+    max-width: 90%;
+    word-wrap: break-word; /* Перенос длинных слов */
+}
+
+/* Контейнер для текста */
+.promo {
+    padding: 20px 15px; /* Меньше padding на мобильных */
+    margin: 20px auto;
+    max-width: 100%;
+}
+
+/* Блок с текстом */
+.info {
+    background: rgba(30, 30, 30, 0.9);
+    padding: 20px; /* Меньше padding */
+    border-radius: 10px;
+    border-left: 3px solid #666;
+}
+
+/* Стили текста */
+.info p {
+    line-height: 1.6; /* Меньше межстрочный интервал */
+    font-size: 16px; /* Меньше размер шрифта */
+    text-align: justify;
+    hyphens: auto; /* Автоматическая расстановка переносов */
+    word-wrap: break-word;
+}
+
+/* Попап для фото */
+.photo-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    z-index: 1000;
+    padding: 15px;
+}
+
+.photo-popup.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-image {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 10px;
+    object-fit: contain; /* Сохраняем пропорции */
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    line-height: 40px;
+    text-align: center;
+    z-index: 1001;
+}
+
+/* Медиа-запросы для адаптивности */
+
+/* Для планшетов (от 768px) */
+@media (min-width: 768px) {
+    .header .logo {
+        font-size: 24px;
+        padding: 20px;
+    }
+    
+    .promo {
+        padding: 30px 40px;
+        margin: 30px auto;
+        max-width: 90%;
+    }
+    
+    .info {
+        padding: 30px;
+        border-left: 4px solid #666;
+    }
+    
+    .info p {
+        font-size: 18px;
+        line-height: 1.7;
+    }
+    
+    .popup-image {
+        max-width: 80%;
+    }
+}
+
+/* Для десктопов (от 1024px) */
+@media (min-width: 1024px) {
+    .header .logo {
+        font-size: 30px;
+        padding: 25px;
+    }
+    
+    .promo {
+        padding: 40px 60px;
+        margin: 50px auto;
+        max-width: 900px;
+    }
+    
+    .info {
+        padding: 40px;
+        border-left: 5px solid #666;
+    }
+    
+    .info p {
+        font-size: 20px;
+        line-height: 1.8;
+    }
+    
+    .popup-image {
+        max-width: 70%;
+        max-height: 85vh;
+    }
+}
+
+/* Для очень маленьких экранов (менее 360px) */
+@media (max-width: 359px) {
+    .header .logo {
+        font-size: 16px;
+        padding: 10px;
+    }
+    
+    .promo {
+        padding: 10px;
+    }
+    
+    .info {
+        padding: 15px;
+    }
+    
+    .info p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    
+    .close-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+        line-height: 35px;
+        top: 10px;
+        right: 10px;
+    }
+}
+
+/* Горизонтальная ориентация на мобильных */
+@media (max-height: 500px) and (orientation: landscape) {
+    .photo-popup {
+        padding: 5px;
+    }
+    
+    .popup-image {
+        max-height: 90vh;
+        max-width: 90%;
+    }
+    
+    .info p {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+}
+
+/* Для улучшения читаемости на мобильных */
+@media (max-width: 767px) {
+    .info p {
+        text-align: left; /* На мобильных лучше left чем justify */
+        -webkit-text-size-adjust: 100%; /* Предотвращает авто-масштабирование в iOS */
+        text-size-adjust: 100%;
+    }
+    
+    /* Улучшаем скроллинг на iOS */
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Оптимизация для темной темы на мобильных */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #000;
+        color: #f0f0f0;
+    }
+    
+    .info {
+        background: rgba(40, 40, 40, 0.95);
+    }
+}
+
+/* Убираем выделение при тапе на мобильных */
+.logo, .close-btn {
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+/* Анимация для улучшения UX на мобильных */
+.logo:active {
+    opacity: 0.7;
+    transform: scale(0.98);
+    transition: transform 0.1s;
+}
